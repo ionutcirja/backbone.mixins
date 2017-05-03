@@ -2,7 +2,7 @@
 
 This is an extension of Backbone library to add support for mixins.
 
-About mixin pattern you can read here:
+Some good documentation about the mixin pattern can be found here:
 https://addyosmani.com/resources/essentialjsdesignpatterns/book/#mixinpatternjavascript
 
 Any pull request for optimisations and new additions is more than welcome.
