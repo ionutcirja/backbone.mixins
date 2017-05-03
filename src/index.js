@@ -2,7 +2,6 @@ var Backbone = require('backbone');
 var _ = require('underscore');
 
 function augment(entity, mixin) {
-
     if (typeof mixin === 'object') {
         _.keys(mixin).forEach(function(key) {
             if (entity[key]) {
@@ -14,14 +13,12 @@ function augment(entity, mixin) {
 }
 
 function addMixins(entity, mixins) {
-
     _.keys(mixins).forEach(function(key) {
         augment(entity, mixins[key]);
     });
 }
 
 var extend = function(entity, options) {
-
     var mixins = entity.mixins || (options ? options.mixins : {}) || {};
     if (_.keys(mixins).length) {
         addMixins(entity, mixins);
@@ -29,34 +26,28 @@ var extend = function(entity, options) {
 };
 
 Backbone.View = (function(View) {
-
     return View.extend({
         constructor: function(options) {
             extend(this, options);
             View.apply(this, arguments);
         }
     });
-
 })(Backbone.View);
 
 Backbone.Model = (function(Model) {
-
     return Model.extend({
         constructor: function(attributes, options) {
             extend(this, options);
             Model.apply(this, arguments);
         }
     });
-
 })(Backbone.Model);
 
 Backbone.Collection = (function(Collection) {
-
     return Collection.extend({
         constructor: function(models, options) {
             extend(this, options);
             Collection.apply(this, arguments);
         }
     });
-
 })(Backbone.Collection);
