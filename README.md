@@ -16,6 +16,30 @@ npm install backbone-mixins
 # Usage
 
 ```js
-require('backbone');
+var Backbone = require('backbone');
 require('backbone-mixins');
+
+var mixin = {
+    someMethod: function() {
+        return 1;
+    },
+    otherMethod: function() {
+        return 2;
+    }
+};
+
+// mixins can be defined for views, models and collections
+// mixins can be defined or passed as an option
+var view = new Backbone.View({
+    mixins: [mixin]
+});
+// view.someMethod() = 1;
+// view.otherMethod() = 2;
+
+var View = Backbone.View.extend({
+    mixins: [mixin]
+});
+var view = new View();
+// view.someMethod() = 1;
+// view.otherMethod() = 2;
 ```
