@@ -18,12 +18,12 @@ function addMixins(entity, mixins) {
     });
 }
 
-var extend = function(entity, options) {
+function extend(entity, options) {
     var mixins = entity.mixins || (options ? options.mixins : []) || [];
     if (mixins.length) {
         addMixins(entity, mixins);
     }
-};
+}
 
 Backbone.View = (function(View) {
     return View.extend({
