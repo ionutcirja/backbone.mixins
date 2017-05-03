@@ -29,7 +29,7 @@ var mixin = {
 };
 
 // mixins can be defined for views, models and collections
-// mixins can be defined or passed as an option
+// mixins can be defined or passed as an option to the constructor
 var view = new Backbone.View({
     mixins: [mixin]
 });
