@@ -1,9 +1,8 @@
 var Backbone = require('backbone');
 var expect = require('chai').expect;
-require('../index');
+require('./');
 
 describe('Backbone Mixins', function() {
-
     it('should attach a mixin method if mixins are passed to a backbone entity constructor', function() {
         var Mixin = {
             mixinMethod: function() {

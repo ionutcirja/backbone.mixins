@@ -1,20 +1,20 @@
 {
   "name": "backbone.mixins",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Ionut Cirja",
   "repository": "https://github.com/ionutcirja/backbone.mixins.git",
   "dependencies": {
     "backbone": "~1.3.3",
     "underscore": "~1.8.3",
-    "jquery": "~2.2.3"
+    "jquery": "~3.2.1"
   },
   "devDependencies": {
-    "mocha": "~2.4.5",
+    "mocha": "~3.3.0",
     "chai": "~3.5.0",
-    "jsdom": "~8.4.0",
-    "cross-env": "~1.0.7"
+    "jsdom": "~9.12.0",
+    "cross-env": "~4.0.0"
   },
   "scripts": {
-    "test": "cross-env NODE_ENV=test mocha ./tests/.setup.js ./tests/*.spec.js"
+    "test": "cross-env NODE_ENV=test mocha ./src/*.spec.js"
   }
 }

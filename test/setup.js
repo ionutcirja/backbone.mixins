@@ -14,5 +14,3 @@ Object.keys(document.defaultView).forEach(function(property) {
 global.navigator = {
     userAgent: 'node.js'
 };
-
-documentRef = document;
