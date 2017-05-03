@@ -13,14 +13,14 @@ function augment(entity, mixin) {
 }
 
 function addMixins(entity, mixins) {
-    _.keys(mixins).forEach(function(key) {
-        augment(entity, mixins[key]);
+    mixins.forEach(function(mixin) {
+        augment(entity, mixin);
     });
 }
 
 var extend = function(entity, options) {
-    var mixins = entity.mixins || (options ? options.mixins : {}) || {};
-    if (_.keys(mixins).length) {
+    var mixins = entity.mixins || (options ? options.mixins : []) || [];
+    if (mixins.length) {
         addMixins(entity, mixins);
     }
 };

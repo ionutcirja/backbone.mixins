@@ -2,30 +2,24 @@ var Backbone = require('backbone');
 var expect = require('chai').expect;
 require('./');
 
-describe('Backbone Mixins', function() {
+describe('Backbone mixins', function() {
     it('should attach a mixin method if mixins prop is passed to a backbone entity constructor', function() {
         var Mixin = {
             mixinMethod: function() {
-                return 1
+                return 1;
             }
         };
 
         var view = new Backbone.View({
-            mixins: {
-                mixin : Mixin
-            }
+            mixins: [Mixin]
         });
 
         var model = new Backbone.Model({}, {
-            mixins: {
-                mixin : Mixin
-            }
+            mixins: [Mixin]
         });
 
         var collection = new Backbone.Collection({}, {
-            mixins: {
-                mixin : Mixin
-            }
+            mixins: [Mixin]
         });
 
         expect(view.mixinMethod()).to.equal(1);
@@ -36,14 +30,12 @@ describe('Backbone Mixins', function() {
     it('should attach a mixin method if mixins prop is defined as a property', function() {
         var Mixin = {
             mixinMethod: function() {
-                return 2
+                return 2;
             }
         };
 
         var View = Backbone.View.extend({
-            mixins: {
-                mixin : Mixin
-            }
+            mixins: [Mixin]
         });
         var view = new View();
 
@@ -53,21 +45,18 @@ describe('Backbone Mixins', function() {
     it('should throw an error when a mixin method is already attached', function() {
         var Mixin = {
             mixinMethod: function() {
-                return 1
+                return 1;
             }
         };
         var AnotherMixin = {
             mixinMethod: function() {
-                return 2
+                return 2;
             }
         };
 
         expect(function() {
             new Backbone.View({
-                mixins: {
-                    mixin : Mixin,
-                    anotherMixin: AnotherMixin
-                }
+                mixins: [Mixin, AnotherMixin]
             });
         }).to.throw('There is already a property with name mixinMethod');
     });
