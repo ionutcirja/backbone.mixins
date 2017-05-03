@@ -1,11 +1,11 @@
 # Backbone mixins
 
-This is an extension of Backbone library to add support for mixins.
+This is an extension of the Backbone library to add support for mixins.
 
 Some good documentation about the mixin pattern can be found here:
 https://addyosmani.com/resources/essentialjsdesignpatterns/book/#mixinpatternjavascript
 
-Any pull request for optimisations and new additions is more than welcome.
+Any pull request for optimisations and new additions are more than welcome.
 
 # Installing backbone-mixins
 
