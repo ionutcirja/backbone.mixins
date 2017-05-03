@@ -3,7 +3,7 @@ var expect = require('chai').expect;
 require('./');
 
 describe('Backbone Mixins', function() {
-    it('should attach a mixin method if mixins are passed to a backbone entity constructor', function() {
+    it('should attach a mixin method if mixins prop is passed to a backbone entity constructor', function() {
         var Mixin = {
             mixinMethod: function() {
                 return 1
@@ -33,7 +33,7 @@ describe('Backbone Mixins', function() {
         expect(collection.mixinMethod()).to.equal(1);
     });
 
-    it('should attach a mixin method if mixins are defined as a property', function() {
+    it('should attach a mixin method if mixins prop is defined as a property', function() {
         var Mixin = {
             mixinMethod: function() {
                 return 2
