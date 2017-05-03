@@ -2,7 +2,22 @@
   "name": "backbone.mixins",
   "version": "1.0.0",
   "author": "Ionut Cirja",
-  "repository": "https://github.com/ionutcirja/backbone.mixins.git",
+  "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ionutcirja/backbone.mixins"
+  },
+  "main": "src/index.js",
+  "nyc": {
+    "exclude": [
+      "*.spec.js", "./node_modules"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  },
+  "pre-commit": [
+    "test"
+  ],
   "dependencies": {
     "backbone": "~1.3.3",
     "underscore": "~1.8.3",
@@ -12,9 +27,12 @@
     "mocha": "~3.3.0",
     "chai": "~3.5.0",
     "jsdom": "~9.12.0",
+    "nyc": "~10.1.2",
+    "pre-commit": "~1.2.2",
     "cross-env": "~4.0.0"
   },
   "scripts": {
-    "test": "cross-env NODE_ENV=test mocha ./src/*.spec.js"
+    "test": "cross-env NODE_ENV=test ./node_modules/.bin/nyc ./node_modules/.bin/_mocha ./src/*.spec.js",
+    "prepublish": "npm test"
   }
 }
