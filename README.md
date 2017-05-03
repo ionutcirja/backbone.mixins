@@ -15,6 +15,10 @@ npm install backbone-mixins
 
 # Usage
 
+Mixins can be defined for backbone views, models and collections.
+
+Mixins can be also passed as an option to the backbone entity constructor.
+
 ```js
 var Backbone = require('backbone');
 require('backbone-mixins');
@@ -28,14 +32,14 @@ var mixin = {
     }
 };
 
-// mixins can be defined for views, models and collections
-// mixins can be defined or passed as an option to the constructor
+// predefined
 var view = new Backbone.View({
     mixins: [mixin]
 });
 // view.someMethod() = 1;
 // view.otherMethod() = 2;
 
+// passed as an option
 var View = Backbone.View.extend({
     mixins: [mixin]
 });
